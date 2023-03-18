@@ -76,4 +76,79 @@ else:
 def say_hello(name):
     print("Hello ", name)
     print("Welcome to Python Tutorials")
+#=========================================
+# Inptut permite obtener datos del usuario en promter
+#====================================================
+nombre = input("Dame tu nombre: ")
+print("Hola como estás ", nombre)
 
+#========================================
+# Los enteros son de precición ilimitada
+#=======================================
+y = 5000000000000000000000000000000000
+print(y)
+
+#================================
+# Se puede delimitar números con un guión bajo pero no con coma
+#==============================================================
+y = 5_000_000
+print(y)
+
+#======================================================
+# La función int() cambia strings y flotantes a enteros
+#======================================================
+numero = int(input("Dame tu edad "))
+type(numero)
+
+#========================================================
+# La notación científica de flotantes utiliza e o E
+#===================================================
+# 1.2 x 10^{.4}
+#==============
+y = 1.2E-09
+print(y)
+
+#=======================================================
+# La función float() convierte strings y enteros a floats
+#========================================================
+y = float("14.3")
+print(y)
+
+#========================================================
+# Los complejos se escriben con la raíz de menos una
+# j siempre con un número como prefijo
+# no acepta la j suelta
+#=======================================================
+z = 1+1j
+
+# suma +
+# resta -
+# multiplicación *
+A# división /
+# exponente **
+# // función piso
+# Funciones para transformar numeros int() complex()
+# Operaciones abs() round() pow()
+
+print(round(314159,4)
+
+#===========================
+# Strings de varias líneas
+#==========================
+pararrafo = """ En el bosqu de la china
+la chinita se perdió"""
+print(parrafo)
+
+#=========================================
+# La función len() obtiene el tamaño del string
+#==============================================
+n = len(parrafo)
+print(n)
+
+#================================================
+# KLas letras en un string ocupan lugares como en un arreglo 
+# (tambien de atrás para adelante comenzando en -1 el último)
+#============================================================
+palabra = "hola"
+print(parabra[0])
+print(palabra[-4])
