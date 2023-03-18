@@ -48,3 +48,32 @@ print("Hola "); print("tu!!") #Se considera mala práctica
 list = [1, 2, 3, 4,
         5, 6, 7, 8,
         9, 10, 11, 12]
+matriz = [[1,2,3,4],[5,6,7,8],[9,19,11,12]]
+
+print(list)
+print(matriz)
+
+#==================================================================
+# Indentacjión estricta para procesos dependientes de : (dis puntos)
+#===================================================================
+if 10>5:
+    print("diez es mayor que cinco")
+    print("otra identacion")
+for u i in list:
+    print(i)
+    print("ok")
+if 10>5:
+    print("verdadero")
+    if 10<20:
+        print("verdadero")
+elif 5>3:
+    print("esto no se imprimirá")
+else:
+    print("aqui llega")
+#================
+# Funciones
+#==========
+def say_hello(name):
+    print("Hello ", name)
+    print("Welcome to Python Tutorials")
+
