@@ -243,4 +243,77 @@ print(miprimeralista)
 # range(i,j): secuencia de i hasta j-1
 #==========================================
 
-nums = list(ran
+nums = list(range(1,61)
+
+for i in nums:
+    print(i)
+
+#===================================
+# Incluir nuevos elementos en la lista
+#=====================================
+
+nums.append(61)
+nums.append(62)
+nums.append(61)
+print(nums)
+
+#================================
+# Borrar lista
+#=========================
+del nums
+
+#================================
+# Sumar listas
+#=============================0
+L1 = [1,2,3]
+L2 = [4,5,6]
+print(L1+L2)
+
+#==============================
+ # Llenado a mano
+#========================00
+potencial = []
+for i in range(0,1000):
+    potencial.append(float(i))
+print(potencial)
+
+potencial = tuple(potencial)
+print(potencial)
+
+#==============================0
+# Condicionales 
+#================================
+precio = 50
+#................
+# Si esto....
+#...........
+if precio < 50:
+    print("El precio es menor que 50")
+#...........
+# Se no ... si esto otro...
+#.....................
+elif precio > 50: 
+    print("El preicio es mayor a 50")
+#...................
+# se nada de lo anterior....
+#........................
+else:
+    print("El precio es 50")
+
+precio = 50 
+cantidad = 5
+total = precio*cantidad
+#===============================
+# Condicionales anidados
+#=0=============================
+if total > 100:
+    if total > 500:
+        print("Total es mayor que 500")
+    else:
+        if total < 500 and total > 400:
+            print("Total es menor que 500 pero mayor que 400")
+        elif total < 500 and total > 300:
+            print("Total entre 300 y 500")
+        else:
+            print("Total entre 100 y 300")
+                
