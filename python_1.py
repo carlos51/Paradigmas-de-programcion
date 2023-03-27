@@ -317,3 +317,86 @@ if total > 100:
         else:
             print("Total entre 100 y 300")
                 
+#================================
+# Contador mientras la condición dea verdadera
+#=============================================
+num = 0
+while num < 5:
+    num = num + 1
+    print("num = " , num)
+
+num = 0
+while
+#=====================
+# Primera funcion
+#=====================
+def saludo():
+    #=====================
+    # Documentación rápida de la funcuón 
+    #===================================
+    """Esta funcion saluda"""
+    print("!Quiúboles!. ¿como estas?")
+
+#====================================
+# Llamando de la funcuón
+#=================================
+saludo()
+
+#==================================
+# Se ejecuta pero no se asigna
+#================================
+salida = saludo()
+
+#==========================
+# Esto no funciona
+#=========================
+print(salida)
+
+#========================
+# Mostrar documentación
+#=======================0
+# help(saludo)
+
+#=========================
+# Función con argumento
+#========================
+
+def slu2(nombre):
+    """Esta función te saluda por tu nombre"""
+    print("Que onda ese ", nombre, "!")
+salu2("Angel")
+salu2("Julian")
+
+#========================================
+# Ahorrar trabajo del intérprete
+# nombre:str la variable nombre es un str
+#========================================
+def saludos(nombre:str):
+    """Esta función te saluda por tu nombre estrictamente"""
+    print("Que onda ese ",nombre, "!")
+saludos("Julian")
+a = 123
+print(type((a))
+saludos(a)
+
+#==================================
+# Función con muchos argumentos
+#================================
+def saludos_multiples(nombre1, nombre2, nonbre3):
+    """Esta función saluda a 3 personas al mismo tiempo"""
+    print("Hola ", nombre1, ",", nombre2, ",", nombre3)
+saludos_multiples("Hugo", "Juan", "Paco")
+
+#=============================
+# Bucle sobre lista
+#===========================
+nums = [10, 20 , 30, 40, 50]
+for i in nums:
+    print(i)
+
+#===============================
+# Bucle sobre un diccionario
+# Items = elementos
+#================================
+
+numsNames = {1:"One", 2:"Two", 3: "Three"}
