@@ -400,3 +400,97 @@ for i in nums:
 #================================
 
 numsNames = {1:"One", 2:"Two", 3: "Three"}
+for pair in numNames.items():
+    prit(pair)
+#=========================================
+# Bucle sobre diccionario
+# key = llave
+# value = valor
+#========================================
+for k,v, in numNames.items():
+    print("key = ", k, " value =",v)
+
+#============================
+# Primera funcuón
+#==========================
+def saludo():
+    #=========================
+    # Documentacion rápida de la dunción
+    #==================================
+    """ Esta función sauda"""
+    print("¡Quiuboles!, como estas")
+
+#=======================
+# Llamado de la funcion
+#=======================
+saludo()
+
+#========================
+# Se ejecuta pero no se signa
+#============================
+salida = saludo()
+
+#==========================
+# Esto no funciona
+#=======================
+print(salida)
+
+#==========================
+# Mostrar documentación
+#==========================
+#help(saludo)
+
+#============================
+# Función ocn argumento
+#=========================
+def salu2(nonbre):
+    """Esta función te saluda por tu nombre"""
+    print("que onda ese", nombre, "!")
+#=========================================
+# Ahorrar trabajo del intérprete
+# nombre:str la variable nemvre es un str
+#===========================================
+def saludos(nombre:str):
+    """Esta función ter saluda por tu nombre estrictamente"""
+    print("que onda ese", nombre, "!")
+saludos("Julian")
+a = 123
+print(type(a))
+saludos(a)
+
+#=======================================
+# Función con muchos argumentos
+#=======================================
+def saludos_multiples(nombre1, nembre2, nombre3):
+    """Esta función saluda a 3 personas al mismo tiempo"""
+    print("Hola ", nombre1, ",",nombre2, ",", nombre3)
+saludos_multiples("Hugo", "Paco", "Luis")
+
+#===================================================
+# Función con cualquier número de argumentos
+#==================================================
+def muchos_saludos(*nombres):
+    """Esta función saluda a todos los que quieras"""
+    i = 0
+    #===========================================0
+    # end= es para ponerlo de corrido
+    #============================================
+    print("Hola ", end="")
+    while len(nombres)<i:
+        #Ultimo nombre
+        if(i==len(nombres)-1:
+            print(nombres[i])
+        else:
+        #Cualquier otro nombre
+        print(nombres[i], end=",")
+        i+=1
+
+muchos_saludos("Bosco", "Angel", "David", "Tamra", "Milli", "Edwin", "Lev","Luis","Abigail")
+def greet(firstname, lastname):
+    print("Hello", firstname, lastname)
+
+#================================================================
+# Lamar la función con argumentos en desorden
+#============================================
+greet(lastname="Jobs", firstname="Stebve")
+
