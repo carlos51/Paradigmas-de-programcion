@@ -31,9 +31,7 @@ print("vamos a sumar esto" , " con esto otro")
 #==============================================
 # Continuar una instrucción en varios renglones
 #==============================================
-if 100 > 99 and\
-    200 <= and \
-    True != False:
+if 100 > 99 and True != False:
         print('Hello Worols')
 
 #===============================================
@@ -59,7 +57,7 @@ print(matriz)
 if 10>5:
     print("diez es mayor que cinco")
     print("otra identacion")
-for u i in list:
+for i in list:
     print(i)
     print("ok")
 if 10>5:
@@ -130,26 +128,26 @@ A# división /
 # Funciones para transformar numeros int() complex()
 # Operaciones abs() round() pow()
 
-print(round(314159,4)
+print(round(314159,4))
 
 #===========================
 # Strings de varias líneas
 #==========================
-pararrafo = """ En el bosqu de la china
-la chinita se perdió"""
-print(parrafo)
+#parrafo = "En el bosqu de la china la chinita se perdió"
+#print(parrafo)
 
 #=========================================
 # La función len() obtiene el tamaño del string
-#==============================================
-n = len(parrafo)
-print(n)
+#=============================================
+#texto = "texto"
+#n = len(texto)
+#print(n)
 
 #================================================
 # KLas letras en un string ocupan lugares como en un arreglo 
 # (tambien de atrás para adelante comenzando en -1 el último)
 #============================================================
-palabra = "hola"
+palabra = 'hola'
 print(parabra[0])
 print(palabra[-4])
 
@@ -493,4 +491,316 @@ def greet(firstname, lastname):
 # Lamar la función con argumentos en desorden
 #============================================
 greet(lastname="Jobs", firstname="Stebve")
+
+#======================
+# Función con valores por defecto
+#==============================
+def greet(**person):
+    #================================
+    # persona tiene caracteristicas firstname y lastname
+    #======================================================
+    print("Hello ", person["firstname"], person["lastname"])
+
+greet(firstname= "Steve", lastname= "Jobs")
+greet(lastname="Jobs", firstname="Steve")
+greet(firstname="Bill", lastname="Gates", age=55) # Se pueden pasar más parametros de los necesarios
+
+#======================================
+# Función con valores por defecto
+#=====================================
+def greet(name = "Guest"):
+    print("Hello", name)
+
+greet()
+greet("Steve")
+
+#===============================
+# Función con resultados
+#==============================
+def suman(a,b):
+    return a + b
+
+#==============================
+# Programación funcional
+# Se pueden en funciones en funciones
+#====================================
+total = suma(5, suma(10, 20))
+print(total)
+
+#===================================
+# Cálculo lambda
+# nombre de la función = lambda variable : función
+#=================================================
+x_al_cuadrado = lambda x : x * x
+a1 = x_al_cuadrado(5)
+print(a)
+
+#======================================
+# Lambda de varias variables
+#================================
+suma = lambda x1, x2,x3 : x1+x2+x3
+print(suma(99,98, 97))
+
+#===============================
+# Uso de un función anónima
+# El argumento va fuera entre paréntesis
+#=======================================
+print((lambda x : x*x)(6)) # Función anónima
+
+#===================================
+# Función con variable global
+# EVITE EL EXESO !!!!!!!!!!!!!!!!
+#===================================
+name = "Steve"
+def greet():
+    global name #Para utilizar una variable global (que viene de fuera del bloque)
+    name = "Bill"
+    print("Hello ", name)
+
+greet()
+
+#==============================
+# PROGRAMCIÓN ORIENTADA A OBJETOS
+#=================================
+
+#==================================
+# Una clase para un objeto vacío
+# No está tan vacío, necesita
+# la palabra pass = pasar
+#====================================
+class ObjetoVacio:
+    pass
+
+#===============================
+# nada es un OvjetoVacio
+#============================
+nada = ObjetoVacio()
+print(type(nada))
+
+#================================
+# La clase llanta
+#================================
+class Llanta:
+    #====================================
+    # Variable cuenta es de toda la clase
+    #====================================
+    cuenta = 0
+    #=====================================
+    # Función constructora de identidad
+    # __init__ es una función reservada
+    # comienza con uno mismo: self
+    # pero puede ser otro nombre (mi)
+    # parámetros de entrada = default
+    #======================================
+    def __init__(mi, radio=50, ancho=30, presion=1.5):
+        #variable de la estructura conpleta Llanta
+        Lanta.cuenta +=1
+        # variables exclusivas de cada objeto+
+        mi.radio = radio
+        mi.ancho = ancho
+        mi.presion = presion
+
+#==========================
+# Objetos (instanciados)
+#=========================
+llanta1 = Llanta(50,30,1.5)
+llanta2 = Llanta(presion=1.2)
+llanta3 = Llanta()
+llanta4 = Llanta(40, 30, 1.6)
+
+#==================================
+# Objeto que contiene otros objetos
+#==================================
+class Choche:
+    def __init__(self, ll1, ll2, ll3, ll4):
+        self.llanta = ll1
+        self.llanta2 = ll2
+        self.llanta3 = ll3
+
+michoche = Coche(llanta, llanta2, llanta3, llanta4)
+
+print("Total de llantas: ", Llanta.cuenta) # Variable global de la clase
+print("Presión de llanta 4 = ", llanta4.radio)
+print("Radio de la llanta 4 = ", llanta4.radio)
+print("Radio de llanta 3 =", llanta3.radio)
+print("Presión de la llanta 1 de mi coche = ". micoche.llanta1.presion)
+
+#=====================================
+# Encapsulamiento
+#==============================
+
+#============================
+# Uso de la funcón de python property para poner y obtener atributos
+#===================================================================
+class Estudiante:
+    def __init__(self):
+        self.__nombre = ""
+    def ponerme_nombre(self, nombre):
+        print("se llamó a ponerme_nombre")
+        self.__nombre = nombre
+    def obtener_nombre(self):
+        print("se llamó a obtener_nombre")
+        return self.__nombre
+    nombre = property(obtener_nombre, ponerme_nombre)
+
+#============================================00
+# Crear objeto estudianate sin nombre
+#====================================
+estudiante = Estudiante()
+
+#========================================================0
+# Ponerle nombre usando la propiedad nombre y el método ponerme_nombre
+# (sin tener que llamar explícitamente la función)
+#=====================================================================
+estudiante.nombre = "Diego"
+
+#================================================================
+# Obtener el nombre con el método obtener_nombre
+# __nombre es una variable encapsulada (no visible desde fuera)
+# (sin tener que llamar explícitamente a la fución obtener_nombre)
+#================================================================
+print(estudiante.nombre)
+
+# Esto no funciona
+# print(estudiante.__nombre)
+
+#================================
+# Herencia de clases
+#====================
+class Cuadrilatero:
+    def __init__(self, a, b, c, d):
+        self.lado1 = a
+        self.lado2 = b
+        self.lado3 = c
+        self.lado4 = d
+
+    def perimetro(self):
+        p = self.lado1 + self.lado2 + self.lado3 + self.lado4
+        print("perimetro = ", p)
+        return p
+
+#================================================
+# Su hijo rectángulo
+# Rectángulo es hijo de Cuadrilátero
+# Rectángulo (Cuadrilateroo)
+#===============================================
+class Rectangulo(Cuadrilatero):
+    def __init__(self,a,b):
+        #==============================
+        # Constructor se su madre
+        #==============================
+        super().__init__(a,b,a,b)
+
+#==============================
+# Su nieto Cuadrado
+# Hijo de Rectángulo
+#=============================
+class Cuadrado(Rectangulo):
+    def __init__(self, a):
+        super().__init(a,a)
+    def area (self):
+        area = self.lado1**2
+        return area
+
+    def perimetro(self):
+        p = 4 * self.lado1
+        print("perimetro = ", p)
+        return p
+
+#=============================
+# Crear un cuadra
+#=============================
+cuadrado1 = Cuadrado(5)
+
+#========================================================0
+# Llamar al método perímetro de su abuelo Cuadrilatero
+#=======================================================
+perimetro1 = cuadrilatero1.perimetro()
+
+#===================================================
+# Llamar a su propio método área
+#==================================================
+area1 = cuadrado.area()
+
+print("Perímetro = ", perimetro1)
+print("Area = ", area1)
+
+#===================================
+# Sobre-escribrir un método de su madre o abuela o tatarabuela...
+# Es volver a definir una función ya existente
+#================================================================
+
+#=======================================================
+# La clase A tine tres números reales
+#=====================================================
+class A:
+    __a:float = 0.0
+    __b:float = 0.0
+    __c:float = 0.0
+
+    def __init__(self, a:float, b:float, c:float):
+        self.a = a
+        self.b = b
+        self.c = c
+
+#=======================================================
+# La clase B tiene dos números reales
+#========================================================
+class B:
+    __d:float = 0.0
+    __e:float = 0.0
+    def __init__(self,d:float, e:float):
+        self.d = d
+        self.e = e
+
+    #================================================
+    # Método sumar todo (internos + externos)
+    #===============================================
+    def sumar_todo(self, aa:float, bb:float):
+        x:float = self.d + self.e + aa + bb
+        return x
+#===============================================
+# ASOCIACIÓN
+#=================================0
+#Usando objetos independientes
+objetoA = A(1.0, 2.0, 3.0)
+objetoB = B(4.0, 5.0)
+print(objetoB.sumar_todo(objetoA.a,objetoA.b))
+
+#==========================================
+# El objeto C tiene dos reales y un objeto A
+# El objeto A se instancia dentro de C
+#============================================
+class C:
+    __d:float = 0.0
+    __r:float = 0.0
+    __Aa:A= None
+
+    def __init__(self, d:float, e:float):
+        self.d = s
+        self.e = e
+        # A está instanciado adentro
+        self.Aa = A(1.0,2.0,3.0)
+
+    def sumar_todo(self):
+        x:float = self.d + self.e + self.Aa + self.Aa.b
+        return x
+
+#=============================
+# COMPOSICIÓN
+# Contiene otro objeto dentro
+#============================
+objetoC = C(4.0, 5.0)
+print(objetoC.sumar_todo())
+
+#=====================================
+# Objeto D tene dos reales y un objeto A
+# definido por fuera
+#=======================================
+class D:
+    __d:float = 0.0
+    __Aa:A=None
+    
+    def __init__(self, d:float, e:float, Aa:A):
+        self
 
