@@ -16,3 +16,4 @@ n buscar la siguiente
 N buscar la anterior
 :numero se va a la linea del numero
 :$ se va a la ultima linea
+. repetir lo que acabas de hacer
