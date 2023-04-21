@@ -802,5 +802,18 @@ class D:
     __Aa:A=None
     
     def __init__(self, d:float, e:float, Aa:A):
-        self
+        self.d = d
+        self.e = e
+        self.Aa = Aa
+
+    def sumar_todo(self):
+        x:float = self.d + self.e + self.Aa + self.Aa.b
+        return x
+
+#====================================
+# AGREGACIÓN
+# Construye el objeto agregado por fuera
+#=======================================
+objetoD = D(4.0, 5.0, objetoA)
+print(objetoD.sumar_todo())
 
