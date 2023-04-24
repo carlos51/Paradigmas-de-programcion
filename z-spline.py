@@ -53,7 +53,7 @@ class Curva:
             ip1 = i+1
             if i == s.n-1:
                 ip1 = 0
-            d:np.float64 = (s.x[ip1]-s.x[i]**2
+            d:np.float64 = (s.x[ip1]-s.x[i]**2)
         t += d**0.5
         s.l.append(t)
         s.dx = t/float(s.n)
@@ -79,12 +79,12 @@ class Curva:
                 ip1 = 0
             xi.append(a*s.x[ip1] + (1.0-a)*s.x[i])
             for j in range(1,s.dim):
-                xi.append(a*s.x[ip1+j*s.n]+(1.0-a)*s.x[i+j*s.n]
+                xi.append(a*s.x[ip1+j*s.n]+(1.0-a)*s.x[i+j*s.n])
 
         #========================
         # Interpolación cúbica C1
         #========================
-        elif p == 1:
+        elif (p == 1):
             ip1:np.int32 = i+1
             ip2:np.int32 = i+2
             if i == s.n-1:
@@ -102,13 +102,15 @@ class Curva:
             zp2:np.float64 = 0.5*(2.0-ap2)*(2.0-ap2)*(1.0-ap2)
             zm1:np.float64 = 0.5*(2.0-am1)*(2.0-am1)*(1.0-ap2)
             xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+zm1*s.x[im1])
-            for in range(1,s.dim):
+            for i in range(1,s.dim):
                 xi.append(zp1*s.x[ip1+j*s*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zm1*s.x[im1+j*s.n])
 
             #========================
             # Interpolación quintica C2
             #=========================
-            elif p == 2:
+           # elif (p == 2):
+                
+                """
                 ip1:np.int32 = i+1
                 ip2:np.int32 = i+2
                 ip3:np.int32 = i+3
@@ -164,7 +166,7 @@ def zspline(puntos,dim,n,cont):
         [x[i],y[i]] = curva.interpolacion(cont,r)
 
     return x,y
-
+"""
 
 
 
