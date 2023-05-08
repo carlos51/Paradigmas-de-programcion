@@ -21,4 +21,8 @@ class BadeDeDatos(RepositorioDeUsuarios):
         userElements = {"nombre": usuario.getNombre(),
                         "apellido": usuario.getApellido(),
                         "edad" : usuario.getEdad()}
-        print(f"
+        print(f"Guardando el usuario en la base de datos {usuario.getNombre()}\n")
+        print(f"INSERTAR DATOS DEL USUARIO ('{userElements['nombre']}','{userElements['apellido']}',{userElements['edad']})")
+
+    def cerrar(mi) -> None:
+        print("Cerrando la conexión")
