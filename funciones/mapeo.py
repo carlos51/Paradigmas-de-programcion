@@ -1,0 +1,71 @@
+#================================
+# Función pura x**2
+#===========================
+def alcuadrado(x):
+    return x*x
+
+#===================
+# Función pura x**3
+#====================
+def alcubo(x):
+    return x*x*x
+
+#==========================
+# Mapeo de un función pura
+#=========================
+def mapeo(func,lista_numeros):
+    resultado = []
+
+    for i in lista_numeros:
+        resultado.append(func(i))
+    return resultado
+
+cuadrados = mapeo(alcuadrado,[2.5,2,3.8.1.2,5.6,1j,8])
+cubos = mapeo(alcubo,[1,2,3,4,6,7,8])
+print(cuadrados)
+print(cubos)
+
+#===========================================
+# Funciones dentro de funciones
+#==================================
+def en_mayusculas(texto):
+    return texto.upper()
+
+def en_minusculas(texto):
+    return texto.lower()
+
+def saludar(func):
+    saludo = func("Hola, qué tal?")
+    print(saludo)
+
+#=========================0
+# Con strings
+#========================
+saludar(en_mayusculas)
+saludar(en_minusculas)
+#====================================================
+# Funciones abstractas debtro de funciones
+# Su resultado es otra función
+#===============================================
+def divisor(x):
+    def dividendo(y):
+        return y/x
+    return divendo
+
+#==========================
+# Primero generamos la función y/2
+#==============================
+division = divisor(2)
+#==============================
+# La usamos para calcular 3/2
+#===============================
+print(divisor(3))
+
+#==============================
+# Uso de la funcion map con una lista
+#========================================
+
+#==============================0000000000=============
+# Lista de ciudades y su tenperatura
+#===================================0
+temps = [
