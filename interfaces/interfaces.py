@@ -65,3 +65,5 @@ repositorioBaseDeDatos = BaseDeDatos("lical","admin","admin123")
 #============================================================
 ManejoDeInscripciones.inscribirUsuario(usuario,repositorioBaseDeDatos)
 print("\n")
+
+

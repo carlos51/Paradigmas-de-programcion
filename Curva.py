@@ -20,7 +20,7 @@ class Curva:
     #=================
     def __init__(s,x:float =[], dim:int = 3):
         s.x = np.array(x,dtype=np.float64)
-        d.dim = dim
+        s.dim = dim
         s.n:np.int32 = int(len(s.x)/s.dim)
         s.l = []
         s.lista_de_puntos()
@@ -53,9 +53,12 @@ class Curva:
             ip1 = i+1
             if i == s.n-1:
                 ip1 = 0
-            d:np.float64 = (s.x[ip1]-s.x[i]**2)
-        t += d**0.5
-        s.l.append(t)
+            d:np.float64 = (s.x[ip1]-s.x[i])**2
+            for j in range(1,s.dim):
+                d += (s.x[ip1+j*s.n]-s.x[i+j*s.n])**2
+            t += d**0.5
+            s.l.append(t)
+        s.L = t
         s.dx = t/float(s.n)
 
     #=====================
@@ -68,7 +71,7 @@ class Curva:
         rdx:np.float64 = 1.0/s.dx
         xi:float = []
         i:np.int32 = int(r*s.L*rdx)
-        a:np.floar64 = r*s.L*rdx - float(i) # Distancia normalizada
+        a:np.float64 = r*s.L*rdx - float(i) # Distancia normalizada
 
         #========================
         # Interpolación lineal C0
@@ -92,6 +95,7 @@ class Curva:
                 ip2 = 1
             if i == s.n-2:
                 ip2 = 0
+            im1:np.int32 = i-1
             if i == 0:
                 im1 = s.n-1
             am1:np.float64 = a+1.0
@@ -102,8 +106,8 @@ class Curva:
             zp2:np.float64 = 0.5*(2.0-ap2)*(2.0-ap2)*(1.0-ap2)
             zm1:np.float64 = 0.5*(2.0-am1)*(2.0-am1)*(1.0-ap2)
             xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+zm1*s.x[im1])
-            for i in range(1,s.dim):
-                xi.append(zp1*s.x[ip1+j*s*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zm1*s.x[im1+j*s.n])
+            for j in range(1,s.dim):
+                xi.append(zp1*s.x[ip1+j*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zm1*s.x[im1+j*s.n])
 
         #========================
         # Interpolación quintica C2
@@ -121,8 +125,8 @@ class Curva:
             if i == s.n-2:
                 ip2 = 0
                 ip3 = 1
-            im1:np.int32 = j-1
-            im2:np.int32 = j-2
+            im1:np.int32 = i-1
+            im2:np.int32 = i-2
             if i == 0:
                 im1 = s.n-1
                 im2 = s.n-2
@@ -139,19 +143,19 @@ class Curva:
             zp2:np.float64 = -4.0+u12*ap2*(225.0+ap2*(-367.5+ap2*(272.5+ap2*(-94.5+12.5*ap2))))
             zp3:np.float64 = 18.0+u12*ap3*(-459.0+ap3*(382.5+ap3*(-156.5+ap3*(31.5+2.5*ap3))))
             zm1:np.float64 = -4.0+u12*am1*(225.0+am1*(-367.5+am1*(272.5+am1*(-94.5+12.5*am1))))
-            zm2:np.float64 = 18.0+u12*am2*(-459.0+am2*(382.5+am2*(-156.5+am2(31.5-2.5*am2))))
+            zm2:np.float64 = 18.0+u12*am2*(-459.0+am2*(382.5+am2*(-156.5+am2*(31.5-2.5*am2))))
 
             xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+zp3*s.x[ip3]+zm1*s.x[im1]+zm2*s.x[im2])
             for j in range(1,s.dim):
                 xi.append(zp1*s.x[ip1+j*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zp3*s.x[ip3+j*s.n]+zm1*s.x[im1+j*s.n]+zm2*s.x[im2+j*s.n])
 
-            else:
-                print("La suavidad debe ser 0, 1 o 2")
+        else:
+            print("La suavidad debe ser 0, 1 o 2")
 
-            return xi
+        return xi
 
 #============================================================================
-# Función zspline crea el Z-spline de un conjunto de puntos en dim dimensiones,
+# Función zspline crea elfloat64 Z-spline de un conjunto de puntos en dim dimensiones,
 # n segmentos y continuidad (aproximación) cont
 # x,y = zspline(conjunto de puntos, dimensión, número se segmentos, continuidad)
 #================================================================================
