@@ -1,5 +1,5 @@
 from aplicacion.modelos.usuario import Usuario
-from aplicacion.repositorios.repositoriodeusuario import RepositorioDeUsuarios
+from aplicacion.repositorio.repositoriodeusuarios import RepositorioDeUsuarios
 
 #==========================
 # Case storemanager
@@ -17,4 +17,4 @@ class ManejoDeInscripciones:
         print("-----------> Guardando usuario ... \n")
         repositorioDeUsuarios.abrir()
         repositorioDeUsuarios.guardar(usuario)
-        repositoriDeUsuarios.cerrar()
+        repositorioDeUsuarios.cerrar()

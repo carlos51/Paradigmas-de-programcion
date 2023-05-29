@@ -43,12 +43,12 @@ print("Hola "); print("tu!!") #Se considera mala práctica
 # Usando paréntesis redondos, cuadrados o llaves
 # se puede escribir en varios renglones
 #=================================================
-list = [1, 2, 3, 4,
+lista = [1, 2, 3, 4,
         5, 6, 7, 8,
         9, 10, 11, 12]
 matriz = [[1,2,3,4],[5,6,7,8],[9,19,11,12]]
 
-print(list)
+print(lista)
 print(matriz)
 
 #==================================================================
@@ -57,7 +57,7 @@ print(matriz)
 if 10>5:
     print("diez es mayor que cinco")
     print("otra identacion")
-for i in list:
+for i in lista:
     print(i)
     print("ok")
 if 10>5:
@@ -122,7 +122,7 @@ z = 1+1j
 # suma +
 # resta -
 # multiplicación *
-A# división /
+# división /
 # exponente **
 # // función piso
 # Funciones para transformar numeros int() complex()
@@ -148,7 +148,7 @@ print(round(314159,4))
 # (tambien de atrás para adelante comenzando en -1 el último)
 #============================================================
 palabra = 'hola'
-print(parabra[0])
+print(palabra[0])
 print(palabra[-4])
 
 #==============================================
@@ -162,8 +162,8 @@ print(s)
 s.add(100)
 print(s)
 
-s.update(nums)
-print(s)
+#s.update(nums)
+#print(s)
 
 s.remove(100)
 print(s)
@@ -178,9 +178,9 @@ si = s1&s2 # Interseccion
 print(si)
 
 #================================
-}# Uso de diccionarios
+# Uso de diccionarios
 #===============================
-capitals = {"USA":"Washington","France":"Paris","India":"New Delhi"}
+capitals = {"USA":"Washington","France":"Paris","India":"New Delhi","Mexico":"CDMX"}
 print(capitals)
 
 #=================================
@@ -218,10 +218,10 @@ print(capitals)
 del capitals
 
 # Reportar llaves
-print(roamanNums.keys())
+print(romanNums.keys())
 
 # Reportar valores
-print(romanNums.vakues())
+print(romanNums.values())
 
 # Juicio de llaves (está o no está llave en el diccionario)
 print("I" in romanNums)
@@ -241,7 +241,7 @@ print(miprimeralista)
 # range(i,j): secuencia de i hasta j-1
 #==========================================
 
-nums = list(range(1,61)
+nums = list(range(1,61))
 
 for i in nums:
     print(i)
@@ -324,7 +324,6 @@ while num < 5:
     print("num = " , num)
 
 num = 0
-while
 #=====================
 # Primera funcion
 #=====================
@@ -359,7 +358,7 @@ print(salida)
 # Función con argumento
 #========================
 
-def slu2(nombre):
+def salu2(nombre):
     """Esta función te saluda por tu nombre"""
     print("Que onda ese ", nombre, "!")
 salu2("Angel")
@@ -374,13 +373,13 @@ def saludos(nombre:str):
     print("Que onda ese ",nombre, "!")
 saludos("Julian")
 a = 123
-print(type((a))
+print(type((a)))
 saludos(a)
 
 #==================================
 # Función con muchos argumentos
 #================================
-def saludos_multiples(nombre1, nombre2, nonbre3):
+def saludos_multiples(nombre1, nombre2, nombre3):
     """Esta función saluda a 3 personas al mismo tiempo"""
     print("Hola ", nombre1, ",", nombre2, ",", nombre3)
 saludos_multiples("Hugo", "Juan", "Paco")
@@ -398,14 +397,14 @@ for i in nums:
 #================================
 
 numsNames = {1:"One", 2:"Two", 3: "Three"}
-for pair in numNames.items():
-    prit(pair)
+for pair in numsNames.items():
+    print(pair)
 #=========================================
 # Bucle sobre diccionario
 # key = llave
 # value = valor
 #========================================
-for k,v, in numNames.items():
+for k,v, in numsNames.items():
     print("key = ", k, " value =",v)
 
 #============================
@@ -459,7 +458,7 @@ saludos(a)
 #=======================================
 # Función con muchos argumentos
 #=======================================
-def saludos_multiples(nombre1, nembre2, nombre3):
+def saludos_multiples(nombre1, nombre2, nombre3):
     """Esta función saluda a 3 personas al mismo tiempo"""
     print("Hola ", nombre1, ",",nombre2, ",", nombre3)
 saludos_multiples("Hugo", "Paco", "Luis")
@@ -476,11 +475,11 @@ def muchos_saludos(*nombres):
     print("Hola ", end="")
     while len(nombres)<i:
         #Ultimo nombre
-        if(i==len(nombres)-1:
+        if(i==len(nombres)-1):
             print(nombres[i])
         else:
         #Cualquier otro nombre
-        print(nombres[i], end=",")
+            print(nombres[i], end=",")
         i+=1
 
 muchos_saludos("Bosco", "Angel", "David", "Tamra", "Milli", "Edwin", "Lev","Luis","Abigail")
@@ -517,7 +516,7 @@ greet("Steve")
 #===============================
 # Función con resultados
 #==============================
-def suman(a,b):
+def suma(a,b):
     return a + b
 
 #==============================
@@ -594,7 +593,7 @@ class Llanta:
     #======================================
     def __init__(mi, radio=50, ancho=30, presion=1.5):
         #variable de la estructura conpleta Llanta
-        Lanta.cuenta +=1
+        Llanta.cuenta +=1
         # variables exclusivas de cada objeto+
         mi.radio = radio
         mi.ancho = ancho
@@ -611,19 +610,19 @@ llanta4 = Llanta(40, 30, 1.6)
 #==================================
 # Objeto que contiene otros objetos
 #==================================
-class Choche:
+class Coche:
     def __init__(self, ll1, ll2, ll3, ll4):
         self.llanta = ll1
         self.llanta2 = ll2
         self.llanta3 = ll3
 
-michoche = Coche(llanta, llanta2, llanta3, llanta4)
+micoche = Coche(llanta1, llanta2, llanta3, llanta4)
 
 print("Total de llantas: ", Llanta.cuenta) # Variable global de la clase
 print("Presión de llanta 4 = ", llanta4.radio)
 print("Radio de la llanta 4 = ", llanta4.radio)
 print("Radio de llanta 3 =", llanta3.radio)
-print("Presión de la llanta 1 de mi coche = ". micoche.llanta1.presion)
+print("Presión de la llanta 1 de mi coche = ", micoche.llanta.presion)
 
 #=====================================
 # Encapsulamiento
@@ -697,7 +696,7 @@ class Rectangulo(Cuadrilatero):
 #=============================
 class Cuadrado(Rectangulo):
     def __init__(self, a):
-        super().__init(a,a)
+        super().__init__(a,a)
     def area (self):
         area = self.lado1**2
         return area
@@ -709,8 +708,9 @@ class Cuadrado(Rectangulo):
 
 #=============================
 # Crear un cuadra
-#=============================
-cuadrado1 = Cuadrado(5)
+#============================
+cuadrilatero1 = Cuadrilatero(1,2,3,4)
+cuadrado = Cuadrado(5)
 
 #========================================================0
 # Llamar al método perímetro de su abuelo Cuadrilatero
@@ -777,13 +777,13 @@ class C:
     __Aa:A= None
 
     def __init__(self, d:float, e:float):
-        self.d = s
+        self.d = d
         self.e = e
         # A está instanciado adentro
         self.Aa = A(1.0,2.0,3.0)
 
     def sumar_todo(self):
-        x:float = self.d + self.e + self.Aa + self.Aa.b
+        x:float = self.d + self.e + self.Aa.a + self.Aa.b
         return x
 
 #=============================
@@ -807,7 +807,7 @@ class D:
         self.Aa = Aa
 
     def sumar_todo(self):
-        x:float = self.d + self.e + self.Aa + self.Aa.b
+        x:float = self.d + self.e + self.Aa.a + self.Aa.b
         return x
 
 #====================================

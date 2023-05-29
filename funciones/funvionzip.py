@@ -9,7 +9,7 @@ def solo_impar(elemento):
 print(list(zip(mi_lista,tu_lista,su_lista)))
 
 una_lista = ["a","b","c","d","e","e","a"]
-duplicados = set([x for x in una_lista if una_lista.coun(x) > 1])
+duplicados = set([x for x in una_lista if una_lista.count(x) > 1])
 print(duplicados)
 
 # Expreción generadora

@@ -14,7 +14,7 @@ from aplicacion.repositorio.s3 import S3
 # Del directorio aplicacion, el subdirectorio repositorio,
 # el archivo sistemadearchivos.py : traer el objeto SistemaDeArchivos
 #=====================================================================
-from aplicacion.repositorio.sistemasdearchivos import SistemasSeArchivos
+from aplicacion.repositorio.sistemadearchivos import SistemaDeArchivos
 
 #================================================================
 # De directorio aplicacion, el subdirectorio modelos,
@@ -41,7 +41,7 @@ repositoriosS3 = S3("234724291","sdf223434","MiCuenta")
 #========================================================================
 # Interface inscribirUsuario del objeto ManejoDeInscripciones
 #================================================================
-ManejoDeInscripciones.inscribirUsuario(usuario,repositorioS3)
+ManejoDeInscripciones.inscribirUsuario(usuario,repositoriosS3)
 print("\n")
 
 #============================================

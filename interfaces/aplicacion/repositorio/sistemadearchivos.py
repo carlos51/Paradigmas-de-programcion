@@ -3,7 +3,7 @@ from aplicacion.modelos.usuario import Usuario
 #================================================
 # Implementa la interface RepositorioDeUsuarios
 #================================================
-class SistemaDeArchivos(RepositorioUsuarios):
+class SistemaDeArchivos(RepositorioDeUsuarios):
     __directorio: str
 
     def __init__(mi,directorio:str):
@@ -14,7 +14,7 @@ class SistemaDeArchivos(RepositorioUsuarios):
 
     def guardar(mi,usuario:Usuario) -> None:
         xml = f"</root></name>{usuario.getNombre()}</neme></lastName>{usuario.getApellido()}</lastName></age>{usuario.getEdad()}</age></root<"
-        print(f"Guardado usuario en el archivo : {mi._directorio}/{usuario.getNombre()}"
+        print(f"Guardado usuario en el archivo : {mi.__directorio}/{usuario.getNombre()}")
         print(xml)
 
     def cerrar(mi) -> None:

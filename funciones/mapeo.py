@@ -20,7 +20,7 @@ def mapeo(func,lista_numeros):
         resultado.append(func(i))
     return resultado
 
-cuadrados = mapeo(alcuadrado,[2.5,2,3.8.1.2,5.6,1j,8])
+cuadrados = mapeo(alcuadrado,[2.5,2,3.8,1.2,5.6,1j,8])
 cubos = mapeo(alcubo,[1,2,3,4,6,7,8])
 print(cuadrados)
 print(cubos)
@@ -50,7 +50,7 @@ saludar(en_minusculas)
 def divisor(x):
     def dividendo(y):
         return y/x
-    return divendo
+    return dividendo
 
 #==========================
 # Primero generamos la función y/2
@@ -68,7 +68,7 @@ print(divisor(3))
 #==============================0000000000=============
 # Lista de ciudades y su tenperatura
 #===================================0
-temps = [("Berlin",29),("Cairo",36),("Buenos Aires",19),("Los Angeles".26),("Tokyo",27),("Nueva York",28),("Londres",22),("Pekín"32),("México Tenochtitlan",23)]
+temps = [("Berlin",29),("Cairo",36),("Buenos Aires",19),("Los Angeles",26),("Tokyo",27),("Nueva York",28),("Londres",22),("Pekín",32),("México Tenochtitlan",23)]
 
-C_a_F = lambda datos: (datos[0],(9/5)*datos[l]+32)
+C_a_F = lambda datos: (datos[0],(9/5)*datos[1]+32)
 print(list(map(C_a_F,temps)))

@@ -16,7 +16,7 @@ def fibonacci_lento(n):
         return fibonacci_lento(n-1)+fibonacci_lento(n-2)
 
 for i in range(1,36):
-    print(str(i)+":",fibonacci_lent(i))
+    print(str(i)+":",fibonacci_lento(i))
 
 #=============================================
 # Optimización 2: uso de conjuntos para guardar valores
@@ -25,7 +25,7 @@ for i in range(1,36):
 #========================
 # Conjunto de fibonaccis
 #=======================
-fibonaccis = []
+fibonaccis = {}
 def fibonacci(n):
 
     #=======================================
@@ -47,7 +47,7 @@ def fibonacci(n):
     return valor
 
 for i in range(1,10001):
-    print(str(i)+":"+fibonacci(i))
+    print(str(i)+":"+str(fibonacci(i)))
 
 #=================================
 # Uso de decoradores par memorizción
@@ -61,7 +61,7 @@ def nfibonacci(n):
         raise ValueError("n debe ser entero positivo")
     if n==1:
         return 1
-    elif n==1:
+    elif n==2:
         return 1
     elif n>2:
         return nfibonacci(n-1)+nfibonacci(n-2)

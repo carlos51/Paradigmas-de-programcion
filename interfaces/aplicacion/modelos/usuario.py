@@ -20,7 +20,7 @@ class Usuario:
     def getNombre(mi)->str:
         return mi.__nombre
 
-    def gerApellido(mi)->str:
+    def getApellido(mi)->str:
         return mi.__apellido
 
     def getEdad(mi)->str:

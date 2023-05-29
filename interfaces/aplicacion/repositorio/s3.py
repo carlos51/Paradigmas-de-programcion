@@ -1,4 +1,4 @@
-from aplicacion.repositorio.repositoriousuario import RepositorioDeUsuarios
+from aplicacion.repositorio.repositoriodeusuarios import RepositorioDeUsuarios
 from aplicacion.modelos.usuario import Usuario
 
 #========================================
@@ -11,11 +11,11 @@ class S3(RepositorioDeUsuarios):
 
     def __init__(mi, clientId: str, secretKey: str, bucket: str):
         mi.__clientId = clientId
-        mi.__secretKey = secretkey
+        mi.__secretKey = secretKey
         mi.__bucket = bucket
 
     def abrir(mi) -> None:
-        print(f"Estableciendo conexión a AWS S3 {mi.__clientId}:{mi.__secretKey}"
+        print(f"Estableciendo conexión a AWS S3 {mi.__clientId}:{mi.__secretKey}")
 
     def guardar(mi, usuario:Usuario) -> None:
         userData = {"nombre": usuario.getNombre(),

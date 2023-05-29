@@ -7,10 +7,10 @@
 #=======================================================
 
 # Módulo de estadística
-import statics
+import statistics
 
 bigdata = [1.23,23.23,34.3,24.33]
-promedio = statics.mean(bigdata)
+promedio = statistics.mean(bigdata)
 print(promedio)
 
 #==============
