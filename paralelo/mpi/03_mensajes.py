@@ -50,4 +50,4 @@ if __name__ == "__main__":
         m = comm.recv(source=fuente)
         comm.send(s,dest=destino)
 
-    print("Soy el proceso ", rank, ", el resultado es ", len(m.x),",",m.p)
+    print("Soy el proceso ", rank, ", el resultado es ", len(s.x),",",s.p)

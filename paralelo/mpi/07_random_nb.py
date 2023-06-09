@@ -15,7 +15,7 @@ if rank == 0:
     dst = 1
     src = 1 
 
-randNum = numpy.ramdom.random_sample(1)
+randNum = numpy.random.random_sample(1)
 print("Process", rank, "drew the number", randNum[0])
 comm.Isend(randNum,dest = dst)
 req = comm.Irecv(randNum, source = src)

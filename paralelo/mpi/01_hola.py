@@ -9,16 +9,16 @@ from mpi4py import MPI
 #================================
 # Crear un pbjeto comunicador
 #===============================
-comucicadores = MPI.COM_WOLD
+comunicadores = MPI.COMM_WORLD
 
 #=================================
 # Numero total de procesos
 #=============================
-n_procesos = comunicadores.Get_size()
+n_proceso = comunicadores.Get_size()
 
 #====================================
 # Numero identificador de este proceso
 #====================================
-quien_soy = comunicadorese.Get_rank()
+quien_soy = comunicadores.Get_rank()
 
 print("Saludos desde el proceso ",str(quien_soy),"de ", str(n_proceso))

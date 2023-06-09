@@ -10,7 +10,7 @@ class Mensaje:
         # Arreglo de numpy (optimizado)
         #==============================
         self.x = np.array([float(x+rank) for x in range(10)])
-        sefl.p = "vengo del proceso "+str(rank)
+        self.p = "vengo del proceso "+str(rank)
 
 #====================
 # Programa principal
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # con dimensión 10 y tipo de datos
     # float64 (doble precisión)
     #===================================
-    a = np.zeros(10,stype = np.float64)
+    a = np.zeros(10,dtype = np.float64)
     req = comm.Irecv(a, source = src)
     req.Wait()
 

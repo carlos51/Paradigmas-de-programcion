@@ -1,4 +1,4 @@
-from mpi4Py import MPI
+from mpi4py import MPI
 
 #=============
 # Objeto mensaje
@@ -6,7 +6,7 @@ from mpi4Py import MPI
 class Mensaje:
     def __init__(self,rank):
         self.x = [i for i in range(rank*10)]
-        self.p = "vengo del proceso "+ str(ranK)
+        self.p = "vengo del proceso "+ str(rank)
 
 #========================
 # Programa principal
